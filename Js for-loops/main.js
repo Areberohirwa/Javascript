@@ -12,31 +12,31 @@ for (let i = 0; i < 10; i++) {
 console.log("Einde programma");
 
 // opdr 2
-for (counter = 0; counter <= 20; counter++) {
+for (let counter = 0; counter <= 20; counter++) {
     console.log("for-loops", counter)
 }
 console.log("einde programma");
 
 // opdr 3
-for (counter = 2; counter <= 20; counter++) {
+for (let counter = 2; counter <= 20; counter++) {
     console.log("for-loops", counter)
 }
 console.log("einde programma");
 
 // opdr 4
-for (counter = 10; counter >= 0; counter--) {
+for (let counter = 10; counter >= 0; counter--) {
     console.log("for-loops", counter)
 }
 console.log("einde programma");
 
 // opdr 5
-for (counter = 40; counter >= 4; counter--) {
+for (let counter = 40; counter >= 4; counter--) {
     console.log("for-loops", counter)
 }
 console.log("einde programma");
 
 //opdr 6
-for (i = 0; i <= 8; i++) {
+for (let i = 0; i <= 8; i++) {
     console.log("Ik ontwikkel apps:", i)
 }
 console.log("Einde programma");
@@ -48,10 +48,12 @@ for (let i = 1; i < 12; i++) {
 console.log("Einde programma");
 
 // opdr 8
-for (; ; counter++) {
+let counter = 0;
+for (; ;) {
+    counter++;
     console.log("for-loops:", counter)
-    if (counter = 8)
-        break
+    if (counter <= 9)
+        break;
 }
 console.log("Einde programma");
 
