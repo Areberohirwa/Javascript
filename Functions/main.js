@@ -238,3 +238,16 @@ function getSumOfArray(le1) {
 }
 
 getSumOfArray(0);
+////////////////////////////
+
+const container = document.querySelector('.container');
+
+function createmessagebox(paragraf) {
+    const html = '<div class="message-box"> amarura</div>'; 
+
+    return html;
+}
+
+container.innerHTML += createmessagebox('Dit is bericht 1');
+container.innerHTML += createmessagebox('Dit is bericht 2');
+container.innerHTML += createmessagebox('Dit is bericht 3');
