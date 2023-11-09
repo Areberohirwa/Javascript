@@ -46,18 +46,150 @@ function askRandomName() {
     } else if (userInputName == 'Directeur') {
         alert('u bent een Directeur');
     } else {
-        alert("jij bent gay");
+        alert("jij bent raar");
     }
 }
 
-// askRandomName();
+askRandomName();
 //////////////////////////////
 
 // opdr 5 thuis maken
 
 // opdr 6
+for (let i = 0; i < 10; i++) {
+    console.log('loop:', i)
 
-
+}
 
 console.log('Einde Programma');
+//////////////////////////////
 
+// opdr 7
+
+counter = 0;
+
+while (counter < 20) {
+    counter++;
+
+    console.log('dit is mijn huiswerk', counter);
+
+    if (counter < 10)
+
+        console.log('Dit is Javascript', counter);
+}
+///////////////////////////////
+
+// opdr 8
+
+numbers = 0;
+
+while (numbers < 20) {
+    numbers++;
+
+    console.log('loop:', numbers)
+
+    if (numbers > 9)
+
+        break
+}
+//////////////////////////////
+
+// opdr 9
+
+let array = ['rood', 'groen', 'geel', 'blauwe', 'roze', 'tel'];
+for (let i = 0; i < array.length; i++) {
+    const element = array[i];
+    if (element !== 'tel') {
+        const ulList = document.querySelector("ul");
+        ulList.innerHTML += `<li>${element}</li>`;
+    }
+}
+////////////////////////////////////
+
+// opdr 10
+
+let addBtn = document.querySelector('.show-artists');
+let artistName = ['Drake', 'Jay-Z', 'Rihanna', 'Central Cee', 'Cardi b']
+addBtn.addEventListener('click', function () {
+
+    document.querySelector('.display-artist').innerHTML = '<li>' + artistName + '</li>'
+
+})
+//////////////////////////////////
+
+// opdr 11
+
+let userInputMessage = document.querySelector('.user-input')
+let addMessBtn = document.querySelector('.add-message')
+let removeMessage = document.querySelector('.clear-message')
+let showUserMessage = document.querySelector('.add-user-message')
+
+addMessBtn.addEventListener('click', function () {
+    const inputMessage = userInputMessage.value;
+
+    showUserMessage.innerHTML += '<li>' + inputMessage + '</li>';
+})
+
+removeMessage.addEventListener('click', function () {
+    showUserMessage.innerHTML = ' ';
+})
+
+////////////////////////////////
+
+// opdr 12
+
+function showMessage(message) {
+    console.log(message);
+}
+
+showMessage('Dit is een herhaling opdracht');
+//////////////////////////////
+
+// opdr 13
+
+function showSum(a, b) {
+    let result = a + b;
+    return result;
+}
+
+let sum = showSum(456789, 4567890)
+
+console.log('Dit is de Product van a + b:', sum)
+//////////////////////////////
+
+// opdr 14
+
+let arraysColor = ['rood', 'groen', 'geel', 'blauwe', 'roze', 'Wit', 'oranje', 'zwart'];
+for (let i = 0; i < arraysColor.length; i++) {
+    const element = arraysColor[i];
+    if (element !== 'tel') {
+        let showUserarrays = document.querySelector('.array-display')
+        showUserarrays.innerHTML += `<li>${element}</li>`;
+    }
+}
+/////////////////////////////////////
+
+// opdr 15
+
+function getProduct(c, d) {
+    let product = c * d;
+    return product;
+}
+
+let multiply = getProduct(123456789, 9876543);
+console.log('Dit is de product:', multiply);
+
+// opdr 16
+
+let arrayOfNumbers = [1, 3, 5, 7, 11];
+
+function getSumOfArray(numbersArray) {
+    let total = 0;
+
+    for (let sum of numbersArray)
+    total += sum;
+    return total
+
+}
+
+console.log(getSumOfArray(arrayOfNumbers));
