@@ -53,7 +53,40 @@ function askRandomName() {
 askRandomName();
 //////////////////////////////
 
-// opdr 5 thuis maken
+// opdr 5 
+let euros = prompt('vul een bedrag in euros');
+// omzetten van een string naar nummers
+euros = Number(euros);
+
+let crypto = prompt('Kies een crypto(BTC, ETH, etc,...)');
+let result = 0;
+
+
+if (crypto === 'BTC') {
+    // dan doen we hier een bitcoin berekening
+    result = (1 / 35050) * euros;
+    console.log('Bitcoins ', result);
+} else if (crypto === 'ETH') {
+    // dan doen we hier een ETH berekening
+    result = (1 / 1887) * euros;
+    console.log('ETH ', result);
+
+} else if (crypto === 'XRP') {
+    // dan doen we hier een XRP berekening
+    result = (1 / 0.7) * euros;
+    console.log('XRP ', result);
+
+} else if (crypto === 'DOG') {
+    // dan doen we hier een DOG berekening
+    result = (1 / 0.07) * euros;
+    console.log('DOG ', result);
+
+} else if (crypto === 'SOL') {
+    // dan doen we hier een SOL berekening
+    result = (1 / 40.26) * euros;
+    console.log('SOL ', result);
+
+}
 
 // opdr 6
 for (let i = 0; i < 10; i++) {
@@ -187,7 +220,7 @@ function getSumOfArray(numbersArray) {
     let total = 0;
 
     for (let sum of numbersArray)
-    total += sum;
+        total += sum;
     return total
 
 }
