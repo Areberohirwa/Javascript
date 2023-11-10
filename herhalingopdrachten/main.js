@@ -145,7 +145,11 @@ let addBtn = document.querySelector('.show-artists');
 let artistName = ['Drake', 'Jay-Z', 'Rihanna', 'Central Cee', 'Cardi b']
 addBtn.addEventListener('click', function () {
 
-    document.querySelector('.display-artist').innerHTML = '<li>' + artistName + '</li>'
+    for (let index = 0; index < artistName.length; index++) {
+        const artist = artistName[index];
+        
+        document.querySelector('.display-artist').innerHTML += '<li>' + artist + '</li>'
+    }
 
 })
 //////////////////////////////////
