@@ -143,13 +143,21 @@ for (let i = 0; i < array.length; i++) {
 
 let addBtn = document.querySelector('.show-artists');
 let artistName = ['Drake', 'Jay-Z', 'Rihanna', 'Central Cee', 'Cardi b']
+let index = 0;
 addBtn.addEventListener('click', function () {
 
-    for (let index = 0; index < artistName.length; index++) {
+    // for (let index = 0; index < artistName.length; index++) {
+    //     const artist = artistName[index];
+
+    //     document.querySelector('.display-artist').innerHTML += '<li>' + artist + '</li>'
+    // }
+
+    if (index < 5) {
         const artist = artistName[index];
-        
-        document.querySelector('.display-artist').innerHTML += '<li>' + artist + '</li>'
+        document.querySelector('.display-artist').innerHTML += '<li>' + artist + '</li>';
+        index++;
     }
+
 
 })
 //////////////////////////////////
