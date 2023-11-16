@@ -83,33 +83,177 @@ let car5 = {
 /////////////
 
 // opdr 5
-let item1 = { 
-    title: 'Danerolles croissants', 
-    beschrijving: '240 g', 
-    actie: 'per blik 1.39', 
-    prijs: 1.39 
+let item1 = {
+    title: 'Danerolles croissants',
+    beschrijving: '240 g',
+    actie: 'per blik 1.39',
+    prijs: 1.39,
 }
-let item2 = { 
-    title: 'Grote Mandarijn', 
-    beschrijving: '1.5 kg', 
-    actie: '2.49 van 3.49', 
-    prijs: 2.49 
+let item2 = {
+    title: 'Grote Mandarijn',
+    beschrijving: '1.5 kg',
+    actie: '2.49 van 3.49',
+    prijs: 2.49,
 }
-let item3 = { 
-    title: 'Kipkluifjes', 
-    beschrijving: '425 g', 
-    actie: 'per pak 3.49', 
-    prijs: 2.99 
+let item3 = {
+    title: 'Kipkluifjes',
+    beschrijving: '425 g',
+    actie: 'per pak 3.49',
+    prijs: 2.99,
 }
-let item4 = { 
-    title: 'Danerolles croissants', 
-    beschrijving: '240 g', 
-    actie: 'per blik 1.39', 
-    prijs: 1.39 
+let item4 = {
+    title: 'Snoep tomaten',
+    beschrijving: '240 g',
+    actie: 'per blik 2.99',
+    prijs: 2.49,
 }
-let item5 = { 
-    title: 'Danerolles croissants', 
-    beschrijving: '240 g', 
-    actie: 'per blik 1.39', 
-    prijs: 1.39 
+let item5 = {
+    title: 'Verse Zeeuwse mosselen',
+    beschrijving: '2 kg',
+    actie: 'per 2k8 8.69',
+    prijs: 6.49,
+}
+////////////
+
+// opdr 6
+
+let product = {
+    name: 'Sony WH-1000XM4',
+    price: 245,
+    frequencies: 2,
+    connection: 'Wireless with bluetooth',
+}
+
+let product2 = {
+    name: 'LG OLED evo G3 65" zwart',
+    price: 2175,
+    productiondate: 2023,
+    type: 'ultra HD',
+}
+
+let product3 = {
+    name: 'Microsoft Surface Laptop 4 i7',
+    price: 1054.80,
+    resolution: '2496x1664',
+    RAM: '8GB',
+}
+
+let product4 = {
+    name: 'Samsung Tablet A8',
+    price: 177,
+    os: 'Android 11.0',
+    screendiagonal: 10.5,
+}
+
+let product5 = {
+    name: 'Goedkoopste HyperX Armada 27 Zwart',
+    price: 275,
+    refreshrate: 165,
+}
+//////////////
+
+// opdr 7
+
+for (let i = 0; i < eatingRecepts.length; i++) {
+    const arrayDisplay = eatingRecepts[i];
+    console.log('Dit is de titel', arrayDisplay.titel);
+    console.log('-------------------');
+    console.log('Dit is de details', arrayDisplay.details);
+    console.log('-------------------');
+    console.log('Dit is de gezond', arrayDisplay.healthy);
+    console.log('-------------------');
+}
+
+
+//////////////
+
+// opdr 8
+
+let items = [
+    {
+        title: 'Danerolles croissants',
+        beschrijving: '240 g',
+        actie: 'per blik 1.39',
+        prijs: 1.39,
+    },
+    {
+        title: 'Grote Mandarijn',
+        beschrijving: '1.5 kg',
+        actie: '2.49 van 3.49',
+        prijs: 2.49,
+    },
+    {
+        title: 'Kipkluifjes',
+        beschrijving: '425 g',
+        actie: 'per pak 3.49',
+        prijs: 2.99,
+    },
+    {
+        title: 'Snoep tomaten',
+        beschrijving: '240 g',
+        actie: 'per blik 2.99',
+        prijs: 2.49,
+    },
+    {
+        title: 'Verse Zeeuwse mosselen',
+        beschrijving: '2 kg',
+        actie: 'per 2k8 8.69',
+        prijs: 6.49,
+    }
+];
+
+for (let counter = 0; counter < items.length; counter++) {
+    const arrayToDisplay = items[counter];
+
+    console.log("Dit is de array van opdr 5 ", arrayToDisplay.title);
+    console.log('-------------------');
+    console.log("Dit is de array van opdr 5 ", arrayToDisplay.beschrijving);
+    console.log('-------------------');
+    console.log("Dit is de array van opdr 5 ", arrayToDisplay.prijs);
+    console.log('-------------------');
+    console.log("Dit is de array van opdr 5 ", arrayToDisplay.actie);
+    console.log('-------------------');
+}
+///////////////
+
+// opdr 9
+
+const container = document.querySelector('.container')
+
+for (let teller = 0; teller < eatingRecepts.length; teller++) {
+    const products = eatingRecepts[teller];
+    console.log(products.titel);
+    container.innerHTML += '---De titel: ';
+    container.innerHTML += products.titel; 
+    container.innerHTML += '---De beschrijving: ';
+    container.innerHTML += products.details; 
+    container.innerHTML += '---Gezond: ';
+    container.innerHTML += products.healthy; 
+    container.innerHTML += ' --Next-- ';
+}
+
+function createProductHtml(products) {
+    const html = `<div class="container">
+                    <h2>${products.title}</h2>
+                    <p>${products.price}</p>
+                </div>`;
+
+    return html;
+}
+/////////////////
+
+// opdr 10
+
+for (let number = 0; number < items.length; number++) {
+    const elementOfItems = items[number];
+    container.innerHTML += elementOfItems.title;
+}
+
+function createProductHtml(items) {
+    const html = `<div class="container">
+                    <h2>${items.title}</h2>
+                    <p>${itmes.price}</p>
+                </div>`;
+
+    return html;
 }
