@@ -197,7 +197,7 @@ let items = [
     {
         title: 'Verse Zeeuwse mosselen',
         beschrijving: '2 kg',
-        actie: 'per 2k8 8.69',
+        actie: 'per 2kg 8.69',
         prijs: 6.49,
     }
 ];
@@ -220,40 +220,46 @@ for (let counter = 0; counter < items.length; counter++) {
 
 const container = document.querySelector('.container')
 
-for (let teller = 0; teller < eatingRecepts.length; teller++) {
-    const products = eatingRecepts[teller];
-    console.log(products.titel);
-    container.innerHTML += '---De titel: ';
-    container.innerHTML += products.titel; 
-    container.innerHTML += '---De beschrijving: ';
-    container.innerHTML += products.details; 
-    container.innerHTML += '---Gezond: ';
-    container.innerHTML += products.healthy; 
-    container.innerHTML += ' --Next-- ';
-}
-
-function createProductHtml(products) {
-    const html = `<div class="container">
-                    <h2>${products.title}</h2>
-                    <p>${products.price}</p>
-                </div>`;
-
-    return html;
-}
+// for (let teller = 0; teller < eatingRecepts.length; teller++) {
+//     const products = eatingRecepts[teller];
+//     console.log(products.titel);
+//     container.innerHTML += '---De titel: ';
+//     container.innerHTML += products.titel;
+//     container.innerHTML += '---De beschrijving: ';
+//     container.innerHTML += products.details;
+//     container.innerHTML += '---Gezond: ';
+//     container.innerHTML += products.healthy;
+    
+    
+//     return html;
+// }
 /////////////////
 
 // opdr 10
 
 for (let number = 0; number < items.length; number++) {
-    const elementOfItems = items[number];
-    container.innerHTML += elementOfItems.title;
+    const object = items[number];
+    container.innerHTML += createProductHtml(object);
 }
 
-function createProductHtml(items) {
-    const html = `<div class="container">
-                    <h2>${items.title}</h2>
-                    <p>${itmes.price}</p>
-                </div>`;
-
+function createProductHtml(item) {
+    const html = `<div class="card">
+                    <h2>${item.title}</h2>
+                    <p>${item.beschrijving}</p>
+                    <p>${item.actie}</p>
+                    <p>${item.prijs}</p> 
+                </div>
+    `;
+    
     return html;
 }
+
+
+// function createProductHtml(items) {
+//     const html = `<div class="container">
+//                     <h2>${items.title}</h2>
+//                     <p>${itmes.price}</p>
+//                 </div>`;
+
+//     return html;
+// }
