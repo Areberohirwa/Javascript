@@ -101,6 +101,13 @@ for (let counter = 0; counter < arrayObj.length; counter++) {
     </tr>`;
 }
 
+let btnAddButton = document.querySelector('button')
+let cardDIsplay = document.querySelector('.second')
+
+btnAddButton.addEventListener('click', function () {
+    let userInput = prompt('type jou bericht in')
+    cardDIsplay.innerHTML += `<div class="card">${userInput}</div>`;
+})
 
 
 // function showInTable(arrayObj) {
@@ -111,7 +118,7 @@ for (let counter = 0; counter < arrayObj.length; counter++) {
 //         <th>temperature</th>
 //     </tr>
 //     <tr>
-//     <td>${arrayObj.month}</td> 
+//     <td>${arrayObj.month}</td>
 //     <td>${arrayObj.temperature}</td>
 //     </tr>
 //     </table>
