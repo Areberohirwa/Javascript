@@ -14,7 +14,7 @@ let information = [
 let divDisplay = document.querySelector('.container');
 for (let index = 0; index < information.length; index++) {
     const element = information[index];
-    
+
     const htmlDisplay = displayOn(element);
 
     divDisplay.innerHTML += htmlDisplay;
@@ -98,39 +98,70 @@ let studentInformation = [
 for (let counter = 0; counter < studentInformation.length; counter++) {
     const studentInfos = studentInformation[counter];
     let studentDisplay = document.querySelector('.infos')
-    studentDisplay.innerHTML += '<h4>'+studentInfos.firstName + '</h4>';
-    studentDisplay.innerHTML += '<h4>'+studentInfos.lastName + '</h4>';
-    studentDisplay.innerHTML += '<h4>'+studentInfos.course + '</h4>';
+    studentDisplay.innerHTML += '<h4>' + studentInfos.firstName + '</h4>';
+    studentDisplay.innerHTML += '<h4>' + studentInfos.lastName + '</h4>';
+    studentDisplay.innerHTML += '<h4>' + studentInfos.course + '</h4>';
 }
 
 // opdr 4
 
 fetch('https://meme-api.com/gimme/5').then((credits) => credits.json())
-  .then((objData) => {
-    console.log('Ontvang objdata: ', objData);
-    const products = objData.memes;
-    console.log('de 5 memes: ', products);
+    .then((objData) => {
+        console.log('Ontvang objdata: ', objData);
+        const products = objData.memes;
+        console.log('de 5 memes: ', products);
 
 
-    for (let counter = 0; counter < products.length; counter++) {
-      const objDatasProperty = products[counter];
-      console.log('products Zijn: ', objDatasProperty);
+        for (let counter = 0; counter < products.length; counter++) {
+            const objDatasProperty = products[counter];
+            console.log('products Zijn: ', objDatasProperty);
+            let memesDisplay = document.querySelector('.content');
+            let htmlDis = displayOnMemes(objDatasProperty);
 
-    }
-  })
+            memesDisplay.innerHTML += htmlDis;
+        }
+    })
 
-  function displayOnMemes(objDatasProperty) {
+function displayOnMemes(objDatasProperty) {
     const html = `<div class="memes">
-    <h4>${objDatasProperty.}</h4>
-    <h4>${objDatasProperty.}</h4>
-    <h4>${objDatasProperty.}</h4>
-    <h4>${objDatasProperty.}</h4>
-    <h4>${objDatasProperty.}</h4>
-    <h4>${objDatasProperty.}</h4>
-    <h4>${objDatasProperty.}</h4>
-    <h4>${objDatasProperty.}</h4>
+    <h4>${objDatasProperty.author}</h4>
+    <h4>${objDatasProperty.nsfw}</h4>
+    <h4>${objDatasProperty.postLink}</h4>
+    <h4>${objDatasProperty.spoiler}</h4>
+    <h4>${objDatasProperty.subreddit}</h4>
+    <h4>${objDatasProperty.ups}</h4>
+    <h4>${objDatasProperty.title}</h4>
+    <h4>${objDatasProperty.url}</h4>
 </div>
 `;
 
     return html;
+}
+
+// opdr 5
+
+fetch('https://mocki.io/v1/d4867d8b-b5d5-4a48-a4ab-79131b5809b8')
+    .then((jsondata) => jsondata.json())
+    .then((datas) => {
+        console.log('Ontavang datas ', datas);
+
+        let movieInfos = datas;
+
+        for (let c = 0; c < movieInfos.length; c++) {
+            const movie = movieInfos[c];
+            let movieDis = document.querySelector('.movie')
+            let movieFunction = displayOnMovies(movie)
+            movieDis.innerHTML+= movieFunction;
+        }
+    })
+
+function displayOnMovies(movie) {
+    const htmlStyle = `
+    <div class="movie-name">
+    <h2>${movie.name}</h2>
+    <h2>${movie.city}</h2>
+    </div>
+    `;
+
+    return htmlStyle;
 }
